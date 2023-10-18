@@ -21,6 +21,7 @@
   <br>
   <br>
   <center><h1 style="color:#687EFF">{{$judul}}</h1></center>
+  <h1>t</h1>
     <div class="container" style="margin-top: 2rem">
       <table  style="margin-top: 2rem;" class="table">
           <thead>
