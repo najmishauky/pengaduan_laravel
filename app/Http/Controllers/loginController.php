@@ -19,9 +19,16 @@ class LoginController extends Controller
         $datalogin = $request->only("username", "password");
         if(Auth::attempt($datalogin)){
             return redirect('/pengaduan');
+            //echo "berhasil";
         }else{
             return redirect('/login');
+            //echo "gagal";
         }
+    }
+
+    function logout(){
+        auth::logout();
+        return redirect('/login');
     }
 
 

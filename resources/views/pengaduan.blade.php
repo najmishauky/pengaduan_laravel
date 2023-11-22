@@ -21,7 +21,6 @@
   <br>
   <br>
   <center><h1 style="color:#687EFF">{{$judul}}</h1></center>
-  <h1>t</h1>
     <div class="container" style="margin-top: 2rem">
       <table  style="margin-top: 2rem;" class="table">
           <thead>
@@ -39,11 +38,11 @@
               <center><th scope="row" class="table-info">{{$pengaduan->id_pengaduan}}</th></center>
               <td class="table-info">{{$pengaduan->tgl_pengaduan}}</td>
               <td class="table-info">{{$pengaduan->isi_laporan}}</td>
-              <td class="table-info">{{$pengaduan->foto}}</td>
+              <td><img style="width: 50px " src="{{ asset('storage/img/ .$pengaduan->foto') }}" alt="{{ $pengaduan->foto }}"></td>
               <td class="table-info">
                 <a href="/hapus-pengaduan/{{$pengaduan->id_pengaduan}}" class="btn btn-danger">hapus</a>
-                <a href="/detail-pengaduan/{{$pengaduan->id_pengaduan}}" class="btn btn-primary">detail</a>
-                <a href="/update_pengaduan/{{$pengaduan->id_pengaduan}}" class="btn btn-success">update</a>
+                <a href="/detaillaporan/{{$pengaduan->id_pengaduan}}" class="btn btn-primary" >detail</a>
+                <a href="update_pengaduan/{{$pengaduan->id_pengaduan}}" class="btn btn-success">update</a>
               </td>
             </tr>
             @endforeach

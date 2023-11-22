@@ -70,6 +70,8 @@ class PengaduanController extends Controller
     function detail_pengaduan($id){
         echo $id;
     }
+
+   
       
     function update($id){
         $affected = DB::table('pengaduan')
@@ -78,4 +80,24 @@ class PengaduanController extends Controller
     
     }
     
+
+    function tampil_update($id_pengaduan){
+        $title = "Update Data";
+        $pengaduan = DB::table('pengaduan')->where('id_pengaduan', $id_pengaduan)->first();
+        
+        return view('/update', [
+            "pengaduan" => $pengaduan,
+            "title" => $title
+        ]);
+    }
+    function detail($id_pengaduan){
+        $title = "Laporan Per Orang";
+         $pengaduan = DB::table('pengaduan')->where('id_pengaduan', $id_pengaduan)->first();
+
+            return view('/laporaPerOrang', [
+                'title' => $title,
+                'pengaduan' => $pengaduan
+            ]); 
+        }
+       
 }
